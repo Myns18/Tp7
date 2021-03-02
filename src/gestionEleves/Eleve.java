@@ -10,7 +10,6 @@ public class Eleve {
 
     public Eleve(String nom){
         this.nom = nom;
-
     }
 
     public double getmoyenne(){
@@ -24,7 +23,6 @@ public class Eleve {
     public ArrayList<Integer> getListeNotes(){
         if(listenotes.isEmpty()){ System.out.println("La liste est vide."); }
         return listenotes;
-
     }
 
 

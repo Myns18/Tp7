@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Testlisteeleves",
+            "request": "launch",
+            "mainClass": "gestionEleves.Testlisteeleves",
+            "projectName": "Tp7_d5221e1b",
+            "args": [
+                "mika",
+                "Nono",
+                "10",
+                "13",
+                "15"
+            ]
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -16,7 +30,12 @@
             "request": "launch",
             "mainClass": "gestionEleves.Testeleve",
             "projectName": "Tp7_d5221e1b",
-            "args": ["mika","15","10","13"]
+            "args": [
+                "mika",
+                "15",
+                "10",
+                "13"
+            ]
         }
     ]
 }
