@@ -3,20 +3,23 @@ package gestionEleves;
 public class Testlisteeleves{
 
     public static void main(String[] args) {
-        Eleve eleve = new Eleve(args[0]);
-        Eleve eleve2 = new Eleve(args[1]);
+        
         GroupeEleves gpeleve = new GroupeEleves();
-        gpeleve.AjouterEleve(eleve);
-        gpeleve.AjouterEleve(eleve2);
-        System.out.println(gpeleve.Chercher(args[0]));
+        int i = 0;
+        int j = 1;
+        for(i = i; i < args.length;){
+            Eleve eleve = new Eleve(args[i]);
+            gpeleve.AjouterEleve(eleve);
+            i = i+4;
+
+            for(j = j; j < i; j++){
+            eleve.ajouternote(Integer.parseInt(args[j]));
+            }
+            j = j + 1;
+
+        }
         gpeleve.lister();
-
-
-        for(int i = 2; i < args.length; i++){
-            eleve.ajouternote(Integer.parseInt(args[i]));}
-            System.out.println(eleve.toString());
+        //System.out.println(gpeleve.Chercher(args[0]));
     }
-
-
 
 }

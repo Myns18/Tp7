@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class GroupeEleves {
     
 
-    private ArrayList<Eleve> listeEleves = new ArrayList<>();;
+    private ArrayList<Eleve> listeEleves = new ArrayList<Eleve>();
 
     public int nombre(){
         return listeEleves.size();
@@ -23,10 +23,12 @@ public class GroupeEleves {
 
     public Eleve Chercher(String nom){
         Eleve elevetrouver = new Eleve(nom);
+        boolean trouver = false;
         for (int i =0; i< listeEleves.size(); i++) {
             if(elevetrouver.toString().equals(listeEleves.get(i).toString())){
                 elevetrouver = listeEleves.get(i);
-            }else{
+                trouver = true;
+            }else if(!trouver){
                 elevetrouver = null;
             }
           }
@@ -34,10 +36,8 @@ public class GroupeEleves {
     }
 
     public void lister(){
-        for (int i =0; i< listeEleves.size(); i++) {
-            Eleve eleveliste = new Eleve(listeEleves.get(i).toString());
-            System.out.println(eleveliste);
-            
+        for (Eleve eleve : listeEleves) {
+            System.out.println(eleve.toString());
         }
 
     }
