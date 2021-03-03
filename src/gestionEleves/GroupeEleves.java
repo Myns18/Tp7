@@ -22,17 +22,12 @@ public class GroupeEleves {
     }
 
     public Eleve Chercher(String nom){
-        Eleve elevetrouver = new Eleve(nom);
-        boolean trouver = false;
-        for (int i =0; i< listeEleves.size(); i++) {
-            if(elevetrouver.toString().equals(listeEleves.get(i).toString())){
-                elevetrouver = listeEleves.get(i);
-                trouver = true;
-            }else if(!trouver){
-                elevetrouver = null;
-            }
-          }
-          return elevetrouver;
+        for (Eleve eleve : listeEleves) {
+            if(eleve.getnom().equals(nom)){
+                return eleve;
+            }       
+        }
+        return null;
     }
 
     public void lister(){

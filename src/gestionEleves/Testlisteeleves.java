@@ -19,7 +19,9 @@ public class Testlisteeleves{
 
         }
         gpeleve.lister();
-        //System.out.println(gpeleve.Chercher(args[0]));
+        if(gpeleve.Chercher("mika") == null){
+            System.out.println("L'élève ne figure pas dans la liste.");
+        }else{System.out.println(gpeleve.Chercher("mika"));}
     }
 
 }
