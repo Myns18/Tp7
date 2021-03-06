@@ -1,26 +1,22 @@
 package gestionEleves;
 
-public class Testlisteeleves{
+public class Testlisteeleves {
 
     public static void main(String[] args) {
         
         GroupeEleves gpeleve = new GroupeEleves();
         TestGroupeElevesFichier readfile = new TestGroupeElevesFichier();
-        final String SEPARATEUR = " ";
-
-        String datafinal[] = readfile.Readfileofeleves();
+        readfile.Readfileofeleves();
         // Pour les fichiers
         int i = 0;
         int j = 1;
-        for(i = i; i < datafinal.length;){
-            Eleve eleve = new Eleve(datafinal[i]);
-            System.out.println(datafinal[i]);
+        for(i = i; i < readfile.getsize();){
+            Eleve eleve = new Eleve(readfile.getdata(i));
             gpeleve.AjouterEleve(eleve);
             i = i+4;
 
             for(j = j; j < i; j++){
-            eleve.ajouternote(Integer.parseInt(datafinal[j]));
-            System.out.println(datafinal[j]);
+            eleve.ajouternote(Integer.parseInt(readfile.getdata(j)));
             }
             j = j + 1;
 
@@ -42,10 +38,10 @@ public class Testlisteeleves{
         }*/
 
         
-        /*gpeleve.lister();
+        gpeleve.lister();
         if(gpeleve.Chercher("mika") == null){
             System.out.println("L'élève ne figure pas dans la liste.");
-        }else{System.out.println(gpeleve.Chercher("mika"));}*/
-    }
+        }else{System.out.println("Voilà : " + gpeleve.Chercher("mika"));}
 
+    }
 }

@@ -2,35 +2,38 @@ package gestionEleves;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestGroupeElevesFichier {
 
-    public String[] Readfileofeleves(){
+  private ArrayList<String> Data = new ArrayList<String>();
 
-        String [] datafinal = null;
-        String [] test = null;
+    public ArrayList<String> Readfileofeleves(){
         try {
             File filegroupeseleves = new File("eleves.txt");
             Scanner lire = new Scanner(filegroupeseleves);
             while (lire.hasNextLine()) {
-              String data = lire.nextLine();
-              datafinal = data.split(" ");
-              for(int i = 0; i < datafinal.length; i++){
-                test[i] = datafinal[i];
-              //System.out.println(datafinal[i] + " 1");
-              }
+              String datafile = lire.nextLine();
+              String[] datafilesep = datafile.split(" ");
+              for (String item : datafilesep) {
+                this.Data.add(item);
+             }
             }
             lire.close();
           } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
           }
+          return this.Data;
+        }
 
-          for(int i = 0; i < test.length; i++){
-            System.out.println(test[i] + " 2");
-            }
-          return test;
+        public String getdata(int i){
+          return this.Data.get(i);
+        }
+
+        public int getsize(){
+          return this.Data.size();
         }
 
     }

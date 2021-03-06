@@ -3,3 +3,8 @@ Laurent 14 6 14
 Patrick 12 9 14
 Irène 12 14 15
 Fabrice 10 7 16
+Norinne 16 18 20
+Mika 20 20 20
+Rapha 0 2 0
+Cathy 14 15 16
+Oceane 8 9 7
